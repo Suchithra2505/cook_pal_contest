@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>COOKPAL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="Cookpal 1.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:green;font-family: Poppins;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;font-family: Poppins;">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:black;font-family: Poppins;">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="Ellipse 2.png"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--background image section-->
+    <div class="container-fluid" id="con">
+        <div class="row">
+            
+            <div class="col-12 responsive-div">
+                <h1>
+                <span id="hsix">Trending now</span><br>
+                Mike’s famous salad
+                    with cheese<br>
+                    <span id="hsix2">By John Mike</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--Search receipie-->
+    <h6 style="color: #252525;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;">Search For Recipes</h6>
+    <!--hero section-->
+    <div class="container-fluid">
+            
+            <!-- Filter options -->
+            <!--
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control mb-3" id="search" placeholder="Search by name">
+                </div>
+                <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                    <label class="btn btn-secondary active" onclick="updateTypeFilter('all')">
+                    <input type="radio" name="recipeType" value="all" checked> Show All
+                </label>
+                <label class="btn btn-secondary" onclick="updateTypeFilter('veg')">
+                    <input type="radio" name="recipeType" value="veg"> Show Only Veg
+                </label>
+                <label class="btn btn-secondary" onclick="updateTypeFilter('non-veg')">
+                    <input type="radio" name="recipeType" value="non-veg"> Show Only Non-Veg
+                </label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="ratingFilter" value="above4.5" checked>
+                    <label class="form-check-label">Rating Above 4.5</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="ratingFilter" value="below4.0">
+                    <label class="form-check-label">Rating Below 4.0</label>
+                </div>
+            </div>
+        -->
+            <!-- Search bar -->
+        <div class="col-md-6 position-relative" id="se">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="" id="search" placeholder="Search for receipies(read the tooltip!!!)..." data-toggle="tooltip" data-placement="top" title="First Select type of recipe you are interested and then apply search">
+        </div>
+        <!-- Filter options -->
+        <div class="mt-5 col-md-4" >
+            <div class="d-flex flex-row btn-group-toggle mb-3" data-toggle="buttons">
+                <label class="btn btn-danger " onclick="renderRecipes();">
+                    <input type="radio" name="recipeType" value="all"  style="color:aliceblue;"> All Recipes           >
+                </label>
+                <label class="ml-2 btn btn-warning" onclick="updateTypeFilter('veg')" style="color:aliceblue;">
+                    <input type="radio" name="recipeType" value="veg" > Veg Recipes Only        >
+                </label>
+                <label class="ml-2 btn btn-success" onclick="updateTypeFilter('non-veg')">
+                    <input type="radio" name="recipeType" value="non-veg" style="color:aliceblue;"> Show Only Non-Veg      >
+                </label>
+            </div>
+        </div>
+    <div class="d-flex flex-row">
+        <div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="ratingFilter" value="above4.5" checked>
+            <label class="form-check-label">4 and above</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="ratingFilter" value="below4.0">
+            <label class="form-check-label"> Below 4</label>
+        </div>
+     </div>
+            <!-- Recipe cards -->
+            <div class="col-md-9">
+                <div class="row" id="recipeContainer">
+                    <!--  dnamically added here -->
+                </div>
+            </div></div>
+    </div>
+
+    <!--footer portion-->
+    <footer class="bg-light text-dark">
+        <div class="container py-4">
+          <div class="row">
+            <!-- Column 1 -->
+            <div class="col-md-3">
+              <h5><img src="Cookpal 1.png"></h5>
+              <p>Cookpal is a recipe website with a wide variety of delicious recipes, easy-to-use search function. Join our community and let's cook together!</p>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-md-3">
+              <h5>Company</h5>
+              <p>
+                <ul>
+                    <li>Home</li>
+                    <li>Explore</li>
+                    <li>Team</li>
+                    <li>About Us</li>
+                    <li>Activity</li>
+                </ul>
+              </p>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-md-3">
+              <h5>Resources</h5>
+              <p> <ul>
+                <li>Blog</li>
+                <li>Use Cases</li>
+                <li>Testimonials</li>
+                <li>Insights</li>
+                
+            </ul></p>
+            </div>
+            <!-- Column 4 -->
+            <div class="col-md-3">
+              <h5><img src="Cookpal 1.png"></h5>
+              <p>Ut risus mattis interdum faucibus facilisi. Facilisi purus accumsan aliquam.</p>
+             
+              <div class="container mt-5">
+                
+                      <input type="email" class="form-control" placeholder="Enter your email                  @" aria-label="Enter your email" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-success" type="button">Subscribe</button></div>
+                     
+                    
+                
+              </div>
+
+
+            </div>
+          </div>
+          <!--  Social Media Icons -->
+          <hr class="my-4">
+          <div class="text-center" id="icons">
+            <a href="#" class="text-light mx-2"><img src="facebook icon.png"></a>
+            <a href="#" class="text-light mx-2"><img src="Twitter.png"></a>
+            <a href="#" class="text-light mx-2"><img src="instagram icon.png"></a>
+            <a href="#" class="text-light mx-2"><img src="linkedin icon.png"></a>
+          </div>
+        </div>
+      </footer>
+     
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="script.js"></script>   
+</body>
+</html>
